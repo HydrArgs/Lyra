@@ -90,5 +90,6 @@ install(
   DESTINATION ${CMAKE_INSTALL_DATADIR}/lyra/cmake/
   )
 
+include(CPack)
 
 
