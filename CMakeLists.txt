@@ -56,7 +56,7 @@ target_include_directories(
 # Add an alias to public name.
 add_library( bfg::Lyra ALIAS lyra )
 
-set(PackagingTemplatesDir "${CMAKE_CURRENT_SOURCE_DIR}/packaging")
+set(PkgConfigTemplatesDir "${CMAKE_CURRENT_SOURCE_DIR}/data/pkgconfig")
 
 ## Installation Code
 include(GNUInstallDirs)
@@ -92,7 +92,7 @@ install(
   )
 
 set(PKG_CONFIG_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc")
-configure_file("${PackagingTemplatesDir}/pkgconfig.pc.in" "${PKG_CONFIG_FILE_NAME}" @ONLY)
+configure_file("${PkgConfigTemplatesDir}/pkgconfig.pc.in" "${PKG_CONFIG_FILE_NAME}" @ONLY)
 install(FILES "${PKG_CONFIG_FILE_NAME}"
 	DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig"
 )
